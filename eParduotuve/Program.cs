@@ -10,7 +10,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<NetDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("eParduotuveCnn")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
+	.AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<NetDBContext>();
 
 var app = builder.Build();

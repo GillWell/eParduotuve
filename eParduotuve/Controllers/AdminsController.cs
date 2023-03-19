@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace eParduotuve.Controllers
 {
-    [Authorize]
+    [Authorize(Roles="Admin")]
     public class AdminsController : Controller
     {
         private readonly NetDBContext _context;

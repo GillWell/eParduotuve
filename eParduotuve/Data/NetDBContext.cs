@@ -11,5 +11,8 @@ namespace eParduotuve.Data
 		}
 
 		public DbSet<Admin> shopAdmin { get; set; }
+
+		public DbSet<User> users { get; set; }
+
 	}
 }

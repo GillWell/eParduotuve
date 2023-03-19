@@ -1,15 +1,20 @@
-﻿using eParduotuve.Models;
+﻿using eParduotuve.Data;
+using eParduotuve.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace eParduotuve.Controllers
 {
 	public class HomeController : Controller
 	{
+		private NetDBContext _application;
+
 		private readonly ILogger<HomeController> _logger;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(NetDBContext application, ILogger<HomeController> logger)
 		{
+			_application = application;
 			_logger = logger;
 		}
 
